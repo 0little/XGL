@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>远洋科技创新团队信工实验室</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <link rel="stylesheet" href="../css/picture.css">
+</head>
+<body>
+<header>
+    <nav id="header">
+        <div id="logo">
+            <img v-bind:src="logoUrl"/>
+        </div>
+        <div id="navigation">
+            <a v-for="item in items" v-bind:href="item.href">{{item.content}}</a>
+        </div>
+        <!--其他内容-->
+        <div id="rest"></div>
+    </nav>
+</header>
+
+<div id="picture">
+    <div v-for="item in imgItems">
+        <transition name="fade">
+            <img v-if="item.show" v-bind:src="item.url"/>
+        </transition>
+    </div>
+</div>
+
+<h2 style="text-align: center">
+    实验室动态
+</h2>
+
+<div id="news" v-for="item in items">
+
+</div>
+
+<div id="pageChange"></div>
+
+
+<script src="../js/main.js"></script>
+</body>
+</html>
